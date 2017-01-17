@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/vrischmann/envconfig"
+	"github.com/JamesStewy/envconfig"
 )
 
 func ExampleInit() {

@@ -143,6 +143,17 @@ Here's to do this with envconfig:
         Timeout time.Duration `envconfig:"default=1m"`
     }
 
+Notes
+
+Notes allows you to add small bits of text with a configuration key.
+Notes can then be added into generated documentation such as with the docs subpackage.
+
+To add a note to a configuration key use note=
+
+	var conf struct {
+		Timeout time.Duration `envconfig:"note=How long the server should wait before closing connections"`
+	}
+
 Combining options
 
 You can of course combine multiple options. The syntax is simple enough, separate each option with a comma.
@@ -194,6 +205,42 @@ You do this by implementing Unmarshaler on your type. Here's an example:
 
         return nil
     }
+
+ConfInfo object
+
+A ConfInfo object can be passed to functions in the `docs` subpackage to generate documentation.
+A ConfInfo can be obtained by using a Parse*() function rather than an Init*() function and then calling Read() on the ConfInfo object.
+
+For example, this:
+
+	var conf struct {
+		Name    string
+		Id      int
+		Timeout time.Duration
+	}
+
+	if err := envconfig.Init(&conf); err != nil {
+	    log.Fatalln(err)
+	}
+
+becomes this:
+
+	var conf struct {
+		Name    string
+		Id      int
+		Timeout time.Duration
+	}
+
+	cinfo, err := envconfig.Parse(&conf)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	if err = cinfo.Read(); err != nil {
+	    log.Fatalln(err)
+	}
+
+	// cinfo can now be used to generate documentation
 
 */
 package envconfig

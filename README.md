@@ -1,12 +1,12 @@
 envconfig
 =========
 
-[![Build Status](https://travis-ci.org/vrischmann/envconfig.svg?branch=master)](https://travis-ci.org/vrischmann/envconfig)
-[![GoDoc](https://godoc.org/github.com/vrischmann/envconfig?status.svg)](https://godoc.org/github.com/vrischmann/envconfig)
+[![Build Status](https://travis-ci.org/JamesStewy/envconfig.svg?branch=master)](https://travis-ci.org/JamesStewy/envconfig)
+[![GoDoc](https://godoc.org/github.com/JamesStewy/envconfig?status.svg)](https://godoc.org/github.com/JamesStewy/envconfig)
 
 envconfig is a library which allows you to parse your configuration from environment variables and fill an arbitrary struct.
 
-See [the example](https://godoc.org/github.com/vrischmann/envconfig#example-Init) to understand how to use it, it's pretty simple.
+See [the example](https://godoc.org/github.com/JamesStewy/envconfig#example-Init) to understand how to use it, it's pretty simple.
 
 Supported types
 ---------------
@@ -14,7 +14,7 @@ Supported types
   * Almost all standard types plus `time.Duration` are supported by default.
   * Slices and arrays
   * Arbitrary structs
-  * Custom types via the [Unmarshaler](https://godoc.org/github.com/vrischmann/envconfig/#Unmarshaler) interface.
+  * Custom types via the [Unmarshaler](https://godoc.org/github.com/JamesStewy/envconfig/#Unmarshaler) interface.
 
 How does it work
 ----------------

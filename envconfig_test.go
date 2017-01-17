@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/JamesStewy/envconfig"
 	"github.com/stretchr/testify/require"
-	"github.com/vrischmann/envconfig"
 )
 
 func TestParseSimpleConfig(t *testing.T) {
@@ -488,7 +488,7 @@ func TestParseDefaultVal(t *testing.T) {
 }
 
 func TestDefaultSlice(t *testing.T) {
-	// See https://github.com/vrischmann/envconfig/pull/15
+	// See https://github.com/JamesStewy/envconfig/pull/15
 	//
 	// The way people think about the following default value, is that the slice will be [a,b]
 	// However this never worked because we split the entire envconfig tag on , therefore default is just `a` here.
@@ -560,21 +560,6 @@ func TestParseEmptyTag(t *testing.T) {
 	err := envconfig.Init(&conf)
 	require.Nil(t, err)
 	require.Equal(t, "foobar", conf.Name)
-}
-
-func TestLeaveNil(t *testing.T) {
-	var conf struct {
-		MySQL *struct {
-			Name string
-		}
-	}
-
-	err := envconfig.InitWithOptions(&conf, envconfig.Options{
-		AllOptional: true,
-		LeaveNil:    true,
-	})
-	require.Nil(t, err)
-	require.Nil(t, conf.MySQL)
 }
 
 type myMapType map[string]int
