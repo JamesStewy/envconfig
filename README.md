@@ -1,12 +1,21 @@
 envconfig
 =========
 
-[![Build Status](https://travis-ci.org/JamesStewy/envconfig.svg?branch=master)](https://travis-ci.org/JamesStewy/envconfig)
 [![GoDoc](https://godoc.org/github.com/JamesStewy/envconfig?status.svg)](https://godoc.org/github.com/JamesStewy/envconfig)
 
 envconfig is a library which allows you to parse your configuration from environment variables and fill an arbitrary struct.
 
 See [the example](https://godoc.org/github.com/JamesStewy/envconfig#example-Init) to understand how to use it, it's pretty simple.
+
+Differences to vrischmann/envconfig
+-----------------------------------
+
+* Refactored to allow access the reflect data
+ * docs package that uses reflect data to automatically generate documentation
+* Removed the LeaveNil option (LeaveNil is always false)
+
+
+[vrischmann/envconfig](https://github.com/vrischmann/envconfig)
 
 Supported types
 ---------------
