@@ -1,12 +1,21 @@
-hash: accc689999b04842d6c7fd7c017473dd4b7ae51618f59501dc43768c4687b66b
-updated: 2017-01-17T19:09:10.8413579+11:00
+hash: 6e495c6c82d73c3d856d8dfc2a84c5f6e1126a1ed30bcf9e37f1123aabfe7309
+updated: 2017-01-18T11:58:49.9841473+11:00
 imports:
 - name: github.com/mattn/go-runewidth
   version: 737072b4e32b7a5018b4a7125da8d12de90e8045
-  subpackages:
-  - github.com\mattn\go-runewidth
 - name: github.com/olekukonko/tablewriter
   version: 44e365d423f4f06769182abfeeae2b91be9d529b
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
   subpackages:
-  - github.com\olekukonko\tablewriter
-devImports: []
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
+  - require
