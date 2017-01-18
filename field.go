@@ -88,10 +88,6 @@ func (fld *Field) setField(value reflect.Value) (err error) {
 }
 
 func (fld *Field) setSliceField(value reflect.Value, str string) error {
-	if fld.defaultVal != "" {
-		return ErrDefaultUnsupportedOnSlice
-	}
-
 	elType := value.Type().Elem()
 	tnz := newSliceTokenizer(str)
 

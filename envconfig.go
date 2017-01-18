@@ -16,9 +16,6 @@ var (
 	ErrNotAPointer = errors.New("envconfig: value is not a pointer")
 	// ErrInvalidValueKind is the error returned by the Init* functions when the configuration object is not a struct.
 	ErrInvalidValueKind = errors.New("envconfig: invalid value kind, only works on structs")
-	// ErrDefaultUnsupportedOnSlice is the error returned by the Init* functions when there is a default tag on a slice.
-	// The `default` tag is unsupported on slices because slice parsing uses , as the separator, as does the envconfig tags separator.
-	ErrDefaultUnsupportedOnSlice = errors.New("envconfig: default tag unsupported on slice")
 )
 
 // ConfInfo stores information about a configuration struct.
@@ -145,7 +142,23 @@ type tag struct {
 func parseTag(s string) *tag {
 	var t tag
 
-	tokens := strings.Split(s, ",")
+	escape := false
+	tokens := []string{""}
+	for _, r := range s {
+		if !escape {
+			switch r {
+			case '\\':
+				escape = true
+				continue
+			case ',':
+				tokens = append(tokens, "")
+				continue
+			}
+		}
+		escape = false
+		tokens[len(tokens)-1] += string(r)
+	}
+
 	for _, v := range tokens {
 		switch {
 		case v == "-":
