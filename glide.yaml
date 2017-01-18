@@ -1,0 +1,5 @@
+package: github.com/JamesStewy/envconfig
+import:
+- package: github.com/olekukonko/tablewriter
+  subpackages:
+  - github.com\olekukonko\tablewriter
