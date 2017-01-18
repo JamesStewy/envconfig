@@ -210,7 +210,10 @@ func (name fieldName) String() string {
 }
 
 func (name fieldName) Append(newfield string) fieldName {
-	return append(name, newfield)
+	tmp := make(fieldName, len(name)+1)
+	copy(tmp, name)
+	tmp[len(name)] = newfield
+	return tmp
 }
 
 func (name fieldName) Keys() (res []string) {
