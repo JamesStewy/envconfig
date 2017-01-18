@@ -13,6 +13,10 @@ Differences to vrischmann/envconfig
 * Refactored to allow access the reflect data
  * docs package that uses reflect data to automatically generate documentation
 * Removed the LeaveNil option (LeaveNil is always false)
+* Allow default values for slices by escaping commas used as delimiters
+ * Example: ``Slice []string `envconfig:"default=a\\,b\\,c,note=also\\, with notes!"` ``
+ 
+   Output: `Slice=[]string{"a", "b", "c"}` with note="also, with notes!"
 
 
 [vrischmann/envconfig](https://github.com/vrischmann/envconfig)
