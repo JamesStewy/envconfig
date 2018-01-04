@@ -1,8 +1,0 @@
-package: github.com/JamesStewy/envconfig
-import:
-- package: github.com/olekukonko/tablewriter
-testImport:
-- package: github.com/stretchr/testify
-  version: ~1.1.4
-  subpackages:
-  - require
