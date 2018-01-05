@@ -23,7 +23,21 @@
 
 [[constraint]]
   name = "github.com/olekukonko/tablewriter"
+  revision = "44e365d423f4f06769182abfeeae2b91be9d529b"
+
+[[constraint]]
+  name = "github.com/mattn/go-runewidth"
+  version = "=0.0.2"
 
 [[constraint]]
   name = "github.com/stretchr/testify"
   version = "~1.1.4"
+
+[[constraint]]
+  name = "github.com/davecgh/go-spew"
+  version = "~1.1.0"
+
+[[constraint]]
+  name = "github.com/pmezard/go-difflib"
+  version = "~1.0.0"
+

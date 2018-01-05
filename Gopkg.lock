@@ -4,12 +4,14 @@
 [[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
-  revision = "6d212800a42e8ab5c146b8ace3490ee17e5225f9"
+  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/mattn/go-runewidth"
   packages = ["."]
-  revision = "737072b4e32b7a5018b4a7125da8d12de90e8045"
+  revision = "9e777a8366cce605130a531d2cd6363d07ad7317"
+  version = "v0.0.2"
 
 [[projects]]
   name = "github.com/olekukonko/tablewriter"
@@ -19,7 +21,8 @@
 [[projects]]
   name = "github.com/pmezard/go-difflib"
   packages = ["difflib"]
-  revision = "d8ed2627bdf02c080bf22230dbb337003b7aba2d"
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/stretchr/testify"
@@ -30,6 +33,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "78c4f7ef890f1ceb56a214844e27a0dec6649c6dce2084c5a3c01a95f4fca70f"
+  inputs-digest = "81403aee556357963bf393d8216e75043c7a0df406b6ec0e1a07a29591eaa1d4"
   solver-name = "gps-cdcl"
   solver-version = 1
